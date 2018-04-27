@@ -56,12 +56,12 @@ public class MainController {
     }
 
     @RequestMapping("/saveskill")
-    public  String saveSkills (@Valid @ModelAttribute ("aSkill") Skills toSave, BindingResult result){
+    public  String saveSkills (@Valid @ModelAttribute ("aSkill") Skills skill, BindingResult result){
         if (result.hasErrors()){
             return"addskill";
         }
 
-        skillRep.save (toSave);
+        skillRep.save (skill);
         return "redirect:/";
     }
 
@@ -74,12 +74,12 @@ public class MainController {
     }
 
     @RequestMapping("/saveeducation")
-    public  String saveeducation (@Valid @ModelAttribute ("aEducation") Education toSave, BindingResult result){
+    public  String saveeducation (@Valid @ModelAttribute ("aEducation") Education education, BindingResult result){
         if (result.hasErrors()){
             return"addeducation";
         }
 
-        eduRep.save (toSave);
+        eduRep.save (education);
         return "redirect:/";
     }
 
@@ -88,16 +88,16 @@ public class MainController {
     @RequestMapping("/addwork")
     public  String addwork(Model model){
         model.addAttribute( "aWork", new Work());
-        return"addeducation" ;
+        return"addwork" ;
     }
 
     @RequestMapping("/savework")
-    public  String saveeducation (@Valid @ModelAttribute ("aWork") Work toSave, BindingResult result){
+    public  String saveeducation (@Valid @ModelAttribute ("aWork") Work work, BindingResult result){
         if (result.hasErrors()){
             return"addwork";
         }
 
-        workRep.save (toSave);
+        workRep.save (work);
         return "redirect:/";
     }
 
@@ -105,7 +105,7 @@ public class MainController {
     @RequestMapping("/addskillform")
     public String addSkilToForm(Model model)
     {
-        model.addAttribute("theSkills",new Skills());
+        model.addAttribute("aSkill",new Skills());
         model.addAttribute("allpersons",PersonRep.findAll());
         return "addskillform";
     }
@@ -115,7 +115,7 @@ public class MainController {
     @RequestMapping("/addworkform")
     public String addWorkToForm(Model model)
     {
-        model.addAttribute("theWork",new Work());
+        model.addAttribute("aWork",new Work());
         model.addAttribute("allpersons",PersonRep.findAll());
         return "addworkform";
     }
@@ -124,7 +124,7 @@ public class MainController {
     @RequestMapping("/addeduform")
     public String addeduToForm(Model model)
     {
-        model.addAttribute("theWork",new Work());
+        model.addAttribute("aEducation",new Education());
         model.addAttribute("allpersons",PersonRep.findAll());
         return "addeduform";
     }

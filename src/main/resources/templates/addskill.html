@@ -45,7 +45,7 @@
 </div>
 
 
-<form action="/saveskill" th:object="${aSkills}" method="post">
+<form action="/saveskill" th:object="${aSkill}" method="post">
 <input type="hidden" th:field="*{id}">
 <label for="skill">Enter Skill</label>
 <input type="text" th:field="*{skill}">

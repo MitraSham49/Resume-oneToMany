@@ -100,4 +100,18 @@ public class Person {
         myEducations = new HashSet<>();
 
     }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", emailAddress='" + emailAddress + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", mySkills=" + mySkills +
+                ", myWorks=" + myWorks +
+                ", myEducations=" + myEducations +
+                '}';
+    }
 }
