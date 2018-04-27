@@ -11,7 +11,7 @@ public class Education {
     private String degree;
     private String institution;
     @ManyToOne()
-    private  Person LeadPerson;
+    private Person leadPerson;
 
 
     public long getId() {
@@ -38,11 +38,12 @@ public class Education {
         this.institution = institution;
     }
 
+
     public Person getLeadPerson() {
-        return LeadPerson;
+        return leadPerson;
     }
 
     public void setLeadPerson(Person leadPerson) {
-        LeadPerson = leadPerson;
+        this.leadPerson = leadPerson;
     }
 }

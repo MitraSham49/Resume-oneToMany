@@ -6,17 +6,21 @@ import java.util.Set;
 
 @Entity
 public class Person {
-    @Id
+
     @GeneratedValue(strategy= GenerationType.AUTO)
+    @Id
     private long id;
+
 
     private String firstName;
     private String lastName;
     private String emailAddress;
     private String phoneNumber;
-    @OneToMany(mappedBy = "LeadPerson")
-     private Set<Skills> mySkills;
+    @OneToMany(mappedBy = "leadPerson")
+    private Set<Skills> mySkills;
+    @OneToMany(mappedBy = "leadPerson")
     private Set<Work> myWorks;
+    @OneToMany(mappedBy = "leadPerson")
     private Set<Education> myEducations;
     public  Person(){
         mySkills = new HashSet<>();

@@ -11,7 +11,7 @@ public class Work {
     private String jobTitle;
     private String organization;
     @ManyToOne()
-    private  Person LeadPerson;
+    private  Person leadPerson;
 
     public Work(){}
 
@@ -40,10 +40,10 @@ public class Work {
     }
 
     public Person getLeadPerson() {
-        return LeadPerson;
+        return leadPerson;
     }
 
     public void setLeadPerson(Person leadPerson) {
-        LeadPerson = leadPerson;
+        leadPerson = leadPerson;
     }
 }

@@ -11,7 +11,7 @@ public class Skills {
     private String skill;
     private String perficiency;
     @ManyToOne()
-    private  Person LeadPerson;
+    private  Person leadPerson;
 
     public Skills(){}
 
@@ -40,10 +40,10 @@ public class Skills {
     }
 
     public Person getLeadPerson() {
-        return LeadPerson;
+        return leadPerson;
     }
 
     public void setLeadPerson(Person leadPerson) {
-        LeadPerson = leadPerson;
+        leadPerson = leadPerson;
     }
 }

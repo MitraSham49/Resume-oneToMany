@@ -21,6 +21,7 @@ public class MainController {
 
     @Autowired
     EducationRepository eduRep;
+
     @Autowired
     SkillsRepository skillRep;
 
@@ -101,7 +102,7 @@ public class MainController {
     }
 
 
-    @RequestMapping("/addSkillform")
+    @RequestMapping("/addskillform")
     public String addSkilToForm(Model model)
     {
         model.addAttribute("theSkills",new Skills());
@@ -116,7 +117,7 @@ public class MainController {
     {
         model.addAttribute("theWork",new Work());
         model.addAttribute("allpersons",PersonRep.findAll());
-        return "addsworkform";
+        return "addworkform";
     }
 
 
@@ -125,7 +126,7 @@ public class MainController {
     {
         model.addAttribute("theWork",new Work());
         model.addAttribute("allpersons",PersonRep.findAll());
-        return "addsworkform";
+        return "addeduform";
     }
 
 }
